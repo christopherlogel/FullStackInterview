@@ -1,0 +1,158 @@
+body
+{
+	background-color: #444;
+	margin: 0;
+	float: left;
+	width: 100%;
+	font-family: Monaco, Consolas, "Lucida Console", monospace;
+	color: #ccc;
+}
+.content-wrapper
+{
+	width: 1024px;
+	margin: 40px auto;
+	background-color: #3245AB;
+	min-height: 900px;
+	border-radius: 10px;
+	padding: 20px;
+	border: 1px solid #303658;
+}
+.inner-wrapper
+{
+	margin: 0 auto;
+	width: 920px;
+}
+.upper-wrapper
+{
+	float: left;
+	width: 100%;
+	background-color: #3C4DAB;
+	margin-bottom: 10px;
+	border: 1px solid #806D3E;
+}
+.table-header { width: 100%; float: left;}
+.table-header > div
+{
+	float: left;
+	height: 22px;
+	background-color: #020B3E;
+	padding: 10px;
+	line-height: 22px;
+}
+.fname,
+.lname { width: 150px; }
+.address { width: 200px; }
+.city,
+.zip { width: 117px; }
+.state { width: 61px; }
+.th { border-right: 1px dashed #806D3E; }
+.th.zip { border-right: none; }
+.upper-content-row
+{
+	float: left;
+	border-top: 1px dashed #806D3E;
+}
+.upper-content-row *
+{
+	overflow: hidden;
+}
+.upper-content-row:hover,
+.upper-content-row.odd:hover,
+.upper-content-row.selected,
+.upper-content-row.odd.selected
+{
+	cursor: pointer;
+	background-color: #DFA517;
+	color: #000;
+}
+.upper-content-row.odd { background-color: #213498; }
+.entry
+{
+	float: left;
+	padding: 10px;
+	border-right: 1px dashed #806D3E;
+}
+.entry.zip { border-right: none; }
+.paging-div { float: left; }
+.lower-wrapper
+{
+	border: 1px solid #806D3E;
+	background-color: #146B8C;
+	width: 100%;
+	margin-top: 10px;
+	float: left;
+	display: none;
+}
+.field-wrapper
+{
+	float: left;
+	width: 150px;
+	background-color: #012939;
+}
+.field-wrapper div
+{
+	float: left;
+	padding: 16px 0 16px 10px;
+	width: 140px
+}
+.detail-value-wrapper { float: left; }
+.detail-value-wrapper div { float: left; }
+.field-wrapper { border-right: 1px dashed #806D3E; }
+.field { border-bottom: 1px dashed #806D3E; }
+.field.note 
+{ 
+	border-bottom: none;
+	padding: 16px 0 16px 10px;
+	min-height: 40px;
+	line-height: 40px;
+}
+.detail-value-wrapper
+{
+	float: left;
+	width: 769px;
+}
+.detail-value-wrapper div
+{
+	float: left;
+	padding: 16px 0 16px 10px;
+	width: 759px;
+	border-bottom: 1px dashed #806D3E;
+}
+.detail-value.note { border-bottom: none; }
+.paging-div
+{
+	float: left;
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	text-align: right;
+	margin: 10px 0;
+	font-size: 18px;
+}
+.page
+{
+	float: right;
+	padding-left: 10px;
+	color: #fff;
+}
+.page:hover
+{
+	color: #DFA517;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
