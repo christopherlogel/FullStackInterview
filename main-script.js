@@ -15,6 +15,7 @@ $(document).ready(function()
 		error: function()
 		{
 			console.log('Data failed to load.');
+			$('.test-results').append('<div class="error">Table error.</div>');
 		}
 	});
 	
@@ -30,6 +31,7 @@ $(document).ready(function()
 		error: function()
 		{
 			console.log('Data failed to load.');
+			$('.test-results').append('<div class="error">Paging error.</div>');
 		}
 	});
 });
@@ -38,7 +40,7 @@ function populateTable(data)
 {
 	// Clear the table before we populate it
 	$('.upper-content-row').remove();
-
+	
 	for (var i = 0; i < data.length; i++)
 	{
 		// Account for making rows even or odd styled
@@ -51,13 +53,13 @@ function populateTable(data)
 		
 		// Create the HTML data
 		var row = 
-			"<div class='upper-content-row " + evenRow + "' id='" + (data[i][7] - 1) + "'>" +
-			"<div class='entry fname'>" + data[i][0]+ "</div>" +
-			"<div class='entry lname'>" + data[i][1]+ "</div>" +
-			"<div class='entry address'>" + data[i][2]+ "</div>" +
-			"<div class='entry city'>" + data[i][3]+ "</div>" +
-			"<div class='entry state'>" + data[i][4]+ "</div>" +
-			"<div class='entry zip'>" + data[i][5]+ "</div>"
+			"<div class='upper-content-row " + evenRow + "' id='" + (data[i].id - 1) + "'>" +
+			"<div class='entry fname'>" + data[i].fname + "</div>" +
+			"<div class='entry lname'>" + data[i].lname + "</div>" +
+			"<div class='entry address'>" + data[i].street + "</div>" +
+			"<div class='entry city'>" + data[i].city + "</div>" +
+			"<div class='entry state'>" + data[i].state + "</div>" +
+			"<div class='entry zip'>" + data[i].zipcode + "</div>"
 			"</div>";
 			
 		// Append the HTML data to the document
@@ -98,30 +100,23 @@ function populateDetail(id)
 			// Empty the contents of the wrapper
 			$('.detail-value-wrapper').empty();
 
-			// Insert the data into the wrapper
-			for (var i = 0; i < data.length; i++)
-			{
-				for (var j = 0; j < data[i].length - 1; j++)
-				{
-					// If it's the last row, buld it with the flag
-					if (j == data[i].length - 2)
-					{
-						var detail = "<div class='detail-value note'>" + data[i][j] + "</div>"
-					}
-					// Otherwise build the HTML without the flag
-					else
-					{
-						var detail = "<div class='detail-value'>" + data[i][j] + "</div>"
-					}
-					
-					// Insert the statement into the wrapper
-					$('.detail-value-wrapper').append(detail);
-				}
-			}	
+			// Build the details block
+			var details = 
+				"<div class='detail-value'>" + data[0].fname + "</div>" +
+				"<div class='detail-value'>" + data[0].lname + "</div>" +
+				"<div class='detail-value'>" + data[0].street + "</div>" +
+				"<div class='detail-value'>" + data[0].city + "</div>" +
+				"<div class='detail-value'>" + data[0].state + "</div>" +
+				"<div class='detail-value'>" + data[0].zipcode + "</div>" +
+				"<div class='detail-value note'>" + data[0].note + "</div>";
+				
+			// Append the details block to the page
+			$('.detail-value-wrapper').append(details);
 		},
 		error: function()
 		{
 			console.log('Data failed to load.');
+			$('.test-results').append('<div class="error">Detail error.</div>');
 		}
 	});
 }
@@ -155,6 +150,7 @@ function populatePaging(numEntries)
 			error: function()
 			{
 				console.log('Data failed to load.');
+				$('.test-results').append('<div class="error">Paging error.</div>');
 			}
 		});		
 	});

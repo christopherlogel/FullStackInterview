@@ -12,7 +12,7 @@ body
 	width: 1024px;
 	margin: 40px auto;
 	background-color: #3245AB;
-	min-height: 900px;
+	min-height: 1000px;
 	border-radius: 10px;
 	padding: 20px;
 	border: 1px solid #303658;
@@ -141,8 +141,31 @@ body
 	cursor: pointer;
 	text-decoration: underline;
 }
-
-
+.test-button
+{
+	width: 100px;
+	height: 20px;
+	line-height: 20px;
+	padding: 8px;
+	background-color: #146B8C;
+	border: 1px solid #806D3E;
+	border-radius: 5px;
+	margin: 0 auto 20px auto;
+}
+.test-button:hover,
+.test-button.finished
+{
+	cursor: pointer;
+	background-color: #DFA517;
+	color: #000;
+	border: 1px solid #146B8C;
+}
+.error,
+.no-error
+{
+	margin-left: 50px;
+	padding: 10px;
+}
 
 
 

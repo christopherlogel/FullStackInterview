@@ -2,20 +2,19 @@
 
 $id = $_POST['id'];
 
+// Open the DB connection
+include 'config.php';
+
 // Grabs the entry by ID
 if($id !=null)
-{		
-	// Open connection
-	$connection = mysql_connect("localhost", "root", "password") 
-	or die(mysql_error());
-
-	// Get the databse
-	mysql_select_db("sandbox") 
-	or die(mysql_error());
-
-	$addresses = mysql_query("SELECT * FROM addresses LIMIT {$id}, 1") 
-	or die(mysql_error());
-
+{	
+	$stmt = $mysqli->prepare("SELECT * FROM addresses LIMIT ?, 1");
+	$stmt->bind_param('s', $id);
+	
+	$stmt->execute();
+	
+	$result = $stmt->get_result();
+	
 	// Array found in a code snippet library online so I didn't have to type all of this out
 	$states = array('AL' => 'ALABAMA',
                 'AK' => 'ALASKA',
@@ -77,11 +76,10 @@ if($id !=null)
                 'WI' => 'WISCONSIN',
                 'WY' => 'WYOMING');
 				
-	// Outputs the database entires via JSON
 	$rows = array();
-	while ($row = mysql_fetch_row($addresses))
+	while ($row = $result->fetch_assoc())
 	{
-		$row[4] = $states[$row[4]];
+		$row['state'] = $states[$row['state']];
 		$rows[] = $row;
 	}
 	

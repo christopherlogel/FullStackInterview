@@ -6,13 +6,15 @@
 		<link rel="stylesheet" href="main-styles.css">
 		<script src="jquery-1.10.2.min.js"></script>
 		<script type="text/javascript" src="main-script.js"></script>
+		<script type="text/javascript" src="test.js"></script>
 	</head>
 	<body>
 	<div class="content-wrapper">
 		<h1>Coding Interview:  Christopher Logel</h1>
 		<h3>Email:  christopher.logel@gmail.com</h3>
 		<h3>Phone:  952.334.4087</h3>
-		
+		<div class="test-button">Test Button</div>
+		<div class="test-results"></div>
 		<div class="inner-wrapper">
 			<div class="upper-wrapper">
 				<div class="table-header">
